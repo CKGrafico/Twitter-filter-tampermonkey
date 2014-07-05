@@ -43,6 +43,8 @@
 	 * Create config panel and append to body
 	 */
 	function createPanel() {
+		var local = getData();
+
 		$container = $('<div/>').addClass('modal-container ck-filter-container');
 		$close = $('<div/>').addClass('close-modal-background-target ck-filter-close');
 		$modal = $('<div/>').addClass('modal-content ck-modal-content');
@@ -54,7 +56,8 @@
 				label: 'Twitter accounts',
 				name: 'accounts',
 				placeholder: 'Charles, twitter, hater',
-				description: 'Write twitter accounts to exclude'
+				description: 'Write twitter accounts to exclude',
+				value: local.accounts || ''
 			}
 		);
 
@@ -63,7 +66,8 @@
 				label: 'Specific words',
 				name: 'words',
 				placeholder: 'hello, money, idiot',
-				description: 'Write specific words to exclude'
+				description: 'Write specific words to exclude',
+				value: local.words || ''
 			}
 		);
 
@@ -104,7 +108,7 @@
 		$inputContainer = $('<div/>').addClass('control-group');
 		$label = $('<label/>').attr('for', 'ck-input-' + options.name).addClass('t1-label control-label').text(options.label);
 		$controls = $('<div/>').addClass('controls');
-		$input = $('<input/>').attr('id', 'ck-input-' + options.name).attr('type', 'text').attr('placeholder', options.placeholder);
+		$input = $('<input/>').attr('id', 'ck-input-' + options.name).attr('type', 'text').attr('placeholder', options.placeholder).val(options.value);
 		$p = $('<p/>').addClass('notification').text(options.description);
 
 		$inputContainer
@@ -123,9 +127,16 @@
 	 */
 	function saveData() {
 		localStorage.setItem('ckFilters', JSON.stringify({
-			words: $('ck-input-words').val(),
-			accounts: $('ck-input-accounts').val()
+			words: $('#ck-input-words').val(),
+			accounts: $('#ck-input-accounts').val()
 		}));
+	}
+
+	/**
+	 * Get data from localstorage
+	 */
+	function getData() {
+		return JSON.parse(localStorage.getItem('ckFilters'));
 	}
 
 	this.initializeEditor = initialize;
