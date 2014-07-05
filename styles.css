@@ -22,6 +22,10 @@
 	font-weight: bold;
 }
 
+.ck-modal-content button {
+	font-size: 1.2em;
+}
+
 @media screen and (max-width: 870px) {
 	.ck-modal-content {
 		width: 90%;
