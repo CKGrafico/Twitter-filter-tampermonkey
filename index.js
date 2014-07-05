@@ -1,0 +1,21 @@
+
+// GPLv2 Licensed
+// http://www.gnu.org/licenses/gpl-2.0.html
+//
+// ==UserScript==
+// @name            Twitter-Filter
+// @description     Active filter on twitter
+// @namespace       http://ckgrafico.com
+// @version         0.0.1
+// @author          CKGrafico
+// @include         https://www.twitter.com*
+// @include         https://twitter.com*
+// @include         http://www.twitter.com*
+// @include         http://twitter.com*
+// @run-at          document-end
+// @require         http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js
+// ==/UserScript==
+
+(function($){
+	initializeEditor();
+})(jQuery);
