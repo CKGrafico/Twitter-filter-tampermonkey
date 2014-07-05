@@ -17,5 +17,8 @@
 // ==/UserScript==
 
 (function($){
+
+	GM_addStyle(GM_getResourceText('styles'));
+
 	initializeEditor();
 })(jQuery);
