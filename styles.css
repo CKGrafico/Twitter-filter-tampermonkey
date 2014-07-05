@@ -2,3 +2,11 @@
 	width: 60%;
 	margin-left: 20%;
 }
+
+
+@media screen and (max-width: 870px) {
+	.ck-modal-content {
+		width: 90%;
+		margin-left: 5%;
+	}
+}
