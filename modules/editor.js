@@ -17,6 +17,7 @@
 	 */
 	function bindEvents() {
 		$('.ck-filter-close, .ck-filters').on('click', togglePanel);
+		$('.ck-save').on('click', saveData);
 	}
 
 	/**
@@ -46,7 +47,7 @@
 		$close = $('<div/>').addClass('close-modal-background-target ck-filter-close');
 		$modal = $('<div/>').addClass('modal-content ck-modal-content');
 		$h2 = $('<h2/>').text('Filters configuration');
-		$save = $('<button/>').addClass('small-follow-btn follow-btn btn small').text('Save');
+		$save = $('<button/>').addClass('small-follow-btn follow-btn btn small ck-save').text('Save');
 
 		var $input1 = createInput(
 			{
@@ -115,6 +116,16 @@
 			);
 
 		return $inputContainer;
+	}
+
+	/**
+	 * Save on localstorage all data
+	 */
+	function saveData() {
+		localstorage.ckFilters = {
+			words: $('ck-input-words').val(),
+			accounts: $('ck-input-accounts').val(),
+		};
 	}
 
 	this.initializeEditor = initialize;
