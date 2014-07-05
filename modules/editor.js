@@ -46,6 +46,7 @@
 		$close = $('<div/>').addClass('close-modal-background-target ck-filter-close');
 		$modal = $('<div/>').addClass('modal-content ck-modal-content');
 		$h2 = $('<h2/>').text('Filters configuration');
+		$save = $('<button/>').addClass('small-follow-btn follow-btn btn small').text('Save');
 
 		var $input1 = createInput(
 			{
@@ -69,6 +70,7 @@
 			.append($h2)
 			.append($input1)
 			.append($input2)
+			.append($save);
 
 		$container
 			.append($close)
