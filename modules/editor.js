@@ -122,10 +122,10 @@
 	 * Save on localstorage all data
 	 */
 	function saveData() {
-		localstorage.ckFilters = {
+		localStorage.setItem('ckFilters', JSON.stringify({
 			words: $('ck-input-words').val(),
-			accounts: $('ck-input-accounts').val(),
-		};
+			accounts: $('ck-input-accounts').val()
+		}));
 	}
 
 	this.initializeEditor = initialize;
