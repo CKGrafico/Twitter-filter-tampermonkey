@@ -17,7 +17,7 @@
 	 */
 	function bindEvents() {
 		$('.ck-filter-close, .ck-filters').on('click', togglePanel);
-		$('.ck-save').on('click', g.saveData);
+		$('.ck-save').on('click', onSave);
 	}
 
 	/**
@@ -89,7 +89,7 @@
 	 * Open/Close configuration panel
 	 */
 	function togglePanel(e) {
-		e.preventDefault();
+		if(e) e.preventDefault();
 
 		var nextState = 'block';
 
@@ -120,6 +120,14 @@
 			);
 
 		return $inputContainer;
+	}
+
+	/**
+	 * On click save button
+	 */
+	function onSave() {
+		g.saveData();
+		togglePanel();
 	}
 
 	g.initializeEditor = initialize;
