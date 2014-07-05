@@ -17,7 +17,7 @@
 	 */
 	function bindEvents() {
 		$('.ck-filter-close, .ck-filters').on('click', togglePanel);
-		$('.ck-save').on('click', saveData);
+		$('.ck-save').on('click', g.saveData);
 	}
 
 	/**
@@ -43,7 +43,7 @@
 	 * Create config panel and append to body
 	 */
 	function createPanel() {
-		var local = getData();
+		var local = g.getData();
 
 		$container = $('<div/>').addClass('modal-container ck-filter-container');
 		$close = $('<div/>').addClass('close-modal-background-target ck-filter-close');
@@ -120,23 +120,6 @@
 			);
 
 		return $inputContainer;
-	}
-
-	/**
-	 * Save on localstorage all data
-	 */
-	function saveData() {
-		localStorage.setItem('ckFilters', JSON.stringify({
-			words: $('#ck-input-words').val(),
-			accounts: $('#ck-input-accounts').val()
-		}));
-	}
-
-	/**
-	 * Get data from localstorage
-	 */
-	function getData() {
-		return JSON.parse(localStorage.getItem('ckFilters'));
 	}
 
 	this.initializeEditor = initialize;
