@@ -20,6 +20,6 @@
 		return JSON.parse(localStorage.getItem('ckFilters'));
 	}
 
-	this.getData = getData;
-	this.saveData = saveData;
+	g.getData = getData;
+	g.saveData = saveData;
 })(this, jQuery);

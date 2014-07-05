@@ -122,5 +122,5 @@
 		return $inputContainer;
 	}
 
-	this.initializeEditor = initialize;
+	g.initializeEditor = initialize;
 })(this, jQuery);
