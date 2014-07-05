@@ -5,6 +5,22 @@
 	padding: 10px;
 }
 
+.ck-modal-content input {
+	width: 95%;
+}
+
+.ck-modal-content p {
+	margin-left: 10px;
+	font-size: 0.9em;
+	margin-top: 5px;
+	font-style: italic;
+}
+
+.ck-modal-content label {
+	font-size: 1.2em;
+	margin-top: 10px;
+	font-weight: bold;
+}
 
 @media screen and (max-width: 870px) {
 	.ck-modal-content {
