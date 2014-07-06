@@ -26,6 +26,16 @@
 	font-size: 1.2em;
 }
 
+.ck-blocked {
+	height: 13px;
+	min-height: 1px;
+	overflow: hidden;
+}
+
+.ck-message {
+	background: black;
+}
+
 @media screen and (max-width: 870px) {
 	.ck-modal-content {
 		width: 90%;
