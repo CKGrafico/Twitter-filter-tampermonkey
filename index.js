@@ -13,7 +13,7 @@
 // @include         http://www.twitter.com*
 // @include         http://twitter.com*
 // @run-at          document-end
-// @require         http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js
+// @require         http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js
 // ==/UserScript==
 
 (function($){
@@ -21,4 +21,5 @@
 	GM_addStyle(GM_getResourceText('styles'));
 
 	initializeEditor();
+	filterStream();
 })(jQuery);
