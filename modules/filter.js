@@ -28,7 +28,7 @@
 			if(foundWords) {
 				foundWords = foundWords.filter(filterUndefined);
 				foundWords = foundWords.filter(filterDuplicate(foundWords));
-				message += 'Words: ';
+				message += ' Words: ';
 				message += foundWords.join(', ');
 			}
 

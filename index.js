@@ -12,6 +12,7 @@
 // @include         https://twitter.com*
 // @include         http://www.twitter.com*
 // @include         http://twitter.com*
+// @resource        styles https://raw.githubusercontent.com/CKGrafico/Twitter-filter-tampermonkey/master/styles.css
 // @run-at          document-end
 // @require         http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js
 // ==/UserScript==
