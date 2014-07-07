@@ -7,7 +7,7 @@
 	 * Init Filter
 	 */
 	function filter() {
-		var $container = $('.stream-container .tweet');
+		var $container = $('.stream-items .js-stream-item');
 		var filters = g.getData();
 		var words = toRegex(filters.words.split(','));
 		var accounts = toRegex(filters.accounts.split(','));
