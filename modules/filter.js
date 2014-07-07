@@ -26,7 +26,7 @@
 			if(!$(this).hasClass('ck-filtered')) {
 				var text = $(this).text();
 
-				var message = '<b>BLOCKED: </b>';
+				var message = '<b>BLOCKED </b>';
 
 				if(accountsArray.length > 1) {
 					var foundAccounds = text.match(accounts);

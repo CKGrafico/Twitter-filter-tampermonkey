@@ -39,6 +39,15 @@
 	cursor: pointer;
 }
 
+.ck-message b {
+	font-weight: bold !important;
+}
+
+.ck-message i {
+	font-size: 0.9em;
+	color: #B9B9B9;
+}
+
 .ck-filtered {
 	background-color: #FDE5E9 !important;
 }
