@@ -17,7 +17,11 @@
 	 * Get data from localstorage
 	 */
 	function getData() {
-		return JSON.parse(localStorage.getItem('ckFilters'));
+		if(localStorage.getItem('ckFilters')){
+			return JSON.parse(localStorage.getItem('ckFilters'));
+		}
+
+		return false;
 	}
 
 	g.getData = getData;
