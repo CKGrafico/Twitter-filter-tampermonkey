@@ -21,7 +21,7 @@
 			return JSON.parse(localStorage.getItem('ckFilters'));
 		}
 
-		return false;
+		return {};
 	}
 
 	g.getData = getData;
