@@ -9,28 +9,36 @@
 	function filter() {
 		var $container = $('.stream-items .js-stream-item');
 		var filters = g.getData();
-		var words = toRegex(filters.words.split(','));
-		var accounts = toRegex(filters.accounts.split(','));
+		var wordsArray = filters.words.split(',');
+		var words = toRegex(wordsArray);
+
+		var accountsArray = filters.accounts.split(',');
+		var accounts = toRegex(accountsArray);
 
 		$container.each(function() {
 			if(!$(this).hasClass('ck-filtered')) {
 				var text = $(this).text();
-				var foundWords = text.match(words);
-				var foundAccounds = text.match(accounts);
 
 				var message = 'BLOCKED: ';
-				if(foundAccounds) {
-					foundAccounds = foundAccounds.filter(filterUndefined);
-					foundAccounds = foundAccounds.filter(filterDuplicate(foundAccounds));
-					message += 'Accounts: ';
-					message += foundAccounds.join(', ');
+
+				if(accountsArray.length > 1) {
+					var foundAccounds = text.match(accounts);
+					if(foundAccounds) {
+						foundAccounds = foundAccounds.filter(filterUndefined);
+						foundAccounds = foundAccounds.filter(filterDuplicate(foundAccounds));
+						message += 'Accounts: ';
+						message += foundAccounds.join(', ');
+					}
 				}
 
-				if(foundWords) {
-					foundWords = foundWords.filter(filterUndefined);
-					foundWords = foundWords.filter(filterDuplicate(foundWords));
-					message += ' Words: ';
-					message += foundWords.join(', ');
+				if(wordsArray.length > 1) {
+					var foundWords = text.match(words);
+					if(foundWords) {
+						foundWords = foundWords.filter(filterUndefined);
+						foundWords = foundWords.filter(filterDuplicate(foundWords));
+						message += ' Words: ';
+						message += foundWords.join(', ');
+					}
 				}
 
 				if(foundAccounds || foundWords) {
