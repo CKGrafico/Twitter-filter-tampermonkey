@@ -11,7 +11,14 @@ Script for twitter you can filter words or accounts with this filter using tampe
 
 ** Example **
 
+Filters button
 ![Button](http://i.imgur.com/jgEQdss.png "Filters button")
+
+Configure filters
 ![Config](http://i.imgur.com/a3XXvgx.png "Configure filters")
-![Blocked](http://i.imgur.com/uwpNVnJ.png "Example Tweet blocked")
+
+Example blocked tweet
+![Blocked](http://i.imgur.com/uwpNVnJ.png "Example blocked tweet")
+
+Show blocked tweet
 ![Show](http://i.imgur.com/VV6bh9J.png "Show blocked tweet")
