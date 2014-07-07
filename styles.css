@@ -27,7 +27,7 @@
 }
 
 .ck-blocked {
-	height: 18px;
+	height: 28px;
 	min-height: 1px;
 	overflow: hidden;
 }
@@ -36,6 +36,11 @@
 	background: rgba(0,0,0,0.8);
 	color: white;
 	padding: 5px;
+	cursor: pointer;
+}
+
+.ck-filtered {
+	background-color: #FDE5E9 !important;
 }
 
 @media screen and (max-width: 870px) {

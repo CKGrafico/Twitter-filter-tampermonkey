@@ -5,7 +5,7 @@
 // @name            Twitter-Filter
 // @description     Active filter on twitter
 // @namespace       http://ckgrafico.com
-// @version         0.1.0
+// @version         0.1.1
 // @author          CKGrafico
 // @include         https://www.twitter.com*
 // @include         https://twitter.com*
