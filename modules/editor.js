@@ -128,6 +128,7 @@
 	function onSave() {
 		g.saveData();
 		togglePanel();
+		location.reload();
 	}
 
 	g.initializeEditor = initialize;
