@@ -10,24 +10,32 @@
 		var $container = $('.stream-items .js-stream-item');
 		var filters = g.getData();
 		var wordsArray = filters.words.split(',');
+		for (var i = 0; i < wordsArray.length; i++) {
+			wordsArray[i] = wordsArray[i].trim();
+		}
 		var words = toRegex(wordsArray);
 
 		var accountsArray = filters.accounts.split(',');
+		for (i = 0; i < accountsArray.length; i++) {
+			accountsArray[i] = accountsArray[i].trim();
+			accountsArray[i] = (accountsArray[i][0] !== '@') ? '\\@'+accountsArray[i] : accountsArray[i];
+		}
 		var accounts = toRegex(accountsArray);
 
 		$container.each(function() {
 			if(!$(this).hasClass('ck-filtered')) {
 				var text = $(this).text();
 
-				var message = 'BLOCKED: ';
+				var message = '<b>BLOCKED: </b>';
 
 				if(accountsArray.length > 1) {
 					var foundAccounds = text.match(accounts);
 					if(foundAccounds) {
 						foundAccounds = foundAccounds.filter(filterUndefined);
 						foundAccounds = foundAccounds.filter(filterDuplicate(foundAccounds));
-						message += 'Accounts: ';
+						message += 'Accounts: <i>';
 						message += foundAccounds.join(', ');
+						message += '</i>';
 					}
 				}
 
@@ -36,8 +44,9 @@
 					if(foundWords) {
 						foundWords = foundWords.filter(filterUndefined);
 						foundWords = foundWords.filter(filterDuplicate(foundWords));
-						message += ' Words: ';
+						message += ' Words: <i>';
 						message += foundWords.join(', ');
+						message += '</i>';
 					}
 				}
 
@@ -82,7 +91,7 @@
 	 * Create a blocked Div
 	 */
 	function createBlockedDiv ($el, message) {
-		var $div = $('<div/>').addClass('ck-message').text(message);
+		var $div = $('<div/>').addClass('ck-message').html(message);
 		$el.prepend($div).addClass('ck-filtered ck-blocked');
 
 		$div.on('click', onClickMessage);

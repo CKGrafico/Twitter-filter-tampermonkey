@@ -56,7 +56,7 @@
 				label: 'Twitter accounts',
 				name: 'accounts',
 				placeholder: 'Charles, twitter, hater',
-				description: 'Write twitter accounts to exclude',
+				description: 'Write twitter accounts to exclude, separated by commas',
 				value: local.accounts || ''
 			}
 		);
@@ -66,7 +66,7 @@
 				label: 'Specific words',
 				name: 'words',
 				placeholder: 'hello, money, idiot',
-				description: 'Write specific words to exclude',
+				description: 'Write specific words to exclude, separated by commas',
 				value: local.words || ''
 			}
 		);
