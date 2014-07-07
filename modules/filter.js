@@ -13,29 +13,33 @@
 		var accounts = toRegex(filters.accounts.split(','));
 
 		$container.each(function() {
-			var text = $(this).text();
-			var foundWords = text.match(words);
-			var foundAccounds = text.match(accounts);
+			if(!$(this).hasClass('ck-filtered')) {
+				var text = $(this).text();
+				var foundWords = text.match(words);
+				var foundAccounds = text.match(accounts);
 
-			var message = 'BLOCKED: ';
-			if(foundAccounds) {
-				foundAccounds = foundAccounds.filter(filterUndefined);
-				foundAccounds = foundAccounds.filter(filterDuplicate(foundAccounds));
-				message += 'Accounts: ';
-				message += foundAccounds.join(', ');
-			}
+				var message = 'BLOCKED: ';
+				if(foundAccounds) {
+					foundAccounds = foundAccounds.filter(filterUndefined);
+					foundAccounds = foundAccounds.filter(filterDuplicate(foundAccounds));
+					message += 'Accounts: ';
+					message += foundAccounds.join(', ');
+				}
 
-			if(foundWords) {
-				foundWords = foundWords.filter(filterUndefined);
-				foundWords = foundWords.filter(filterDuplicate(foundWords));
-				message += ' Words: ';
-				message += foundWords.join(', ');
-			}
+				if(foundWords) {
+					foundWords = foundWords.filter(filterUndefined);
+					foundWords = foundWords.filter(filterDuplicate(foundWords));
+					message += ' Words: ';
+					message += foundWords.join(', ');
+				}
 
-			if(foundAccounds || foundWords) {
-				createBlockedDiv($(this), message);
+				if(foundAccounds || foundWords) {
+					createBlockedDiv($(this), message);
+				}
 			}
 		});
+
+		requestAnimationFrame(filterStream);
 	}
 
 	/**
@@ -71,7 +75,7 @@
 	 */
 	function createBlockedDiv ($el, message) {
 		var $div = $('<div/>').addClass('ck-message').text(message);
-		$el.prepend($div).addClass('ck-blocked');
+		$el.prepend($div).addClass('ck-filtered ck-blocked');
 
 		$div.on('click', onClickMessage);
 	}

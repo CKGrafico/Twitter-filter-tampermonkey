@@ -19,8 +19,27 @@
 
 (function($){
 
+	// Request Animation Frame
+	(function(){
+		if ( !window.requestAnimationFrame ) {
+		window.requestAnimationFrame = ( function() {
+			return window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame ||
+			window.oRequestAnimationFrame ||
+			window.msRequestAnimationFrame ||
+			function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
+				window.setTimeout( callback, 1000 / 60 );
+			};
+		} )();
+		}
+	})();
+
+	//Add styles
 	GM_addStyle(GM_getResourceText('styles'));
 
+	// Initialize
 	initializeEditor();
-	filterStream();
+
+	// checking loop
+	requestAnimationFrame(filterStream);
 })(jQuery);
