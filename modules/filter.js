@@ -7,7 +7,7 @@
 	 * Init Filter
 	 */
 	function filter() {
-		var $container = $('.stream-items .js-stream-item');
+		var $container = $('.js-stream-item');
 		var filters = g.getData();
 		var wordsArray = filters.words.split(',');
 		for (var i = 0; i < wordsArray.length; i++) {
@@ -28,7 +28,7 @@
 
 				var message = '<b>BLOCKED </b>';
 
-				if(accountsArray.length > 1) {
+				if(accountsArray.length > 0) {
 					var foundAccounds = text.match(accounts);
 					if(foundAccounds) {
 						foundAccounds = foundAccounds.filter(filterUndefined);
@@ -39,7 +39,7 @@
 					}
 				}
 
-				if(wordsArray.length > 1) {
+				if(wordsArray.length > 0) {
 					var foundWords = text.match(words);
 					if(foundWords) {
 						foundWords = foundWords.filter(filterUndefined);
