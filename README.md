@@ -28,6 +28,4 @@ Show blocked tweet
 ![Show](http://i.imgur.com/VV6bh9J.png "Show blocked tweet")
 
 **Bugs**
-- Only works on timeline page refreshing or showing more tweets
 - Error when you go to other page and return to first page
-- Doesn't work on profiles
