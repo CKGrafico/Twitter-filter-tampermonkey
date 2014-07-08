@@ -28,4 +28,4 @@ Show blocked tweet
 ![Show](http://i.imgur.com/VV6bh9J.png "Show blocked tweet")
 
 **Bugs**
-- Error when you go to other page and return to first page
+
