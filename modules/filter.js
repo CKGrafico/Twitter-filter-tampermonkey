@@ -3,6 +3,8 @@
  */
 (function(g, $){
 
+	var lastUrl;
+
 	/**
 	 * Init Filter
 	 */
@@ -21,6 +23,15 @@
 			accountsArray[i] = (accountsArray[i][0] !== '@') ? '\\@'+accountsArray[i] : accountsArray[i];
 		}
 		var accounts = toRegex(accountsArray);
+
+		// Check if change page
+		// because twitter async..
+		var url = document.URL;
+		if(lastUrl != url) {
+			lastUrl = url;
+			$('.ck-filtered').removeClass('ck-filtered ck-blocked');
+			$('.ck-message').remove();
+		}
 
 		$container.each(function() {
 			if(!$(this).hasClass('ck-filtered')) {
