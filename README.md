@@ -6,7 +6,7 @@ Script for twitter you can filter words or accounts with this filter using tampe
 **WARNING Beta version**
 
 1. Install TamperMonkey o similiar extension for your browser [Download Tampermonkey Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=es)
-2. Open this url [Download Raw](https://github.com/CKGrafico/Twitter-filter-tampermonkey/raw/master/build/min/all.min.user.js)
+2. Open this url [Download Raw](http://kcy.me/17o21)
 
 
 **Example**
